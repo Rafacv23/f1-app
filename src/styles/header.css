@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    width: 100auto;
 }
 
 .header-btn{
@@ -16,4 +17,10 @@
 
 .header-btn:hover{
     background-color: #1e1f26ff;
+}
+
+@media screen and (max-width: 750px) {
+    .header{
+        display: none;
+    }
 }

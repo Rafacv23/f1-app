@@ -1,0 +1,12 @@
+.current-season{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 750px) {
+    .current-season{
+        margin-top: 8rem;
+        margin-bottom: 3rem;
+    }
+}

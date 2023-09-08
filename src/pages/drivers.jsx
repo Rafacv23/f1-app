@@ -12,7 +12,6 @@ const Drivers = () => {
       try {
         const data = await getDriverStandings(seasonYear)
         const driverStandings = data[0]?.DriverStandings || []
-        console.log(driverStandings)
         setDrivers(driverStandings)
       } catch (error) {
         console.error(error)
@@ -25,7 +24,7 @@ const Drivers = () => {
     <div>
       <SeasonHeader />
       <h2>Driver Championship</h2>
-      <ul>
+      {drivers.length > 0 ? <ul>
         {drivers.map((driver) => (
           <li key={driver.Driver.driverId}>
             <a href={driver.Driver.url} target="_blank" rel="noopener noreferrer">
@@ -38,7 +37,7 @@ const Drivers = () => {
             <p>Wins: {driver.wins}</p>
           </li>
         ))}
-      </ul>
+      </ul> : <p>Loading data...</p>}
     </div>
   )
 }

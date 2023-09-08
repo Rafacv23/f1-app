@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import "./styles/App.css"
 import { Routes, Route } from "react-router-dom"
 import Seasons from "./pages/seasons.jsx"
@@ -9,15 +9,28 @@ import CurrentSeason from "./pages/current-season"
 import Drivers from "./pages/drivers"
 import Constructors from "./pages/constructors"
 import Races from "./pages/races"
+import MobileBar from "./containers/mobile-bar"
 
 function App () {
+  const [year, setYear] = useState()
+  const getSeason = () => {
+    const date = new Date()
+    const year = date.getFullYear()
+    return year
+  }
+
+  useEffect(() => {
+    setYear(getSeason())
+  }, [])
+
   return (
     <div className="App">
-      <Header></Header>
+      <Header year={year}></Header>
+      <MobileBar year={year}></MobileBar>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/seasons" element={<Seasons/>}/>
-        <Route path="/current" element={<CurrentSeason/>}/>
+        <Route path="/current/races" element={<CurrentSeason year={year}/>}/>
         <Route path="/seasons/:seasonYear/races" element={<Races />} />
         <Route path="/seasons/:seasonYear/drivers" element={<Drivers />} />
         <Route path="/seasons/:seasonYear/constructors" element={<Constructors />} />

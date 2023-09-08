@@ -5,10 +5,10 @@ const SeasonHeader = () => {
   const { seasonYear } = useParams()
 
   return (
-        <div>
-            <Link className="header-btn" to={`/seasons/${seasonYear}/races`}>Races</Link>
-            <Link className="header-btn" to={`/seasons/${seasonYear}/drivers`}>Drivers Championship</Link>
-            <Link className="header-btn" to={`/seasons/${seasonYear}/constructors`}>Constructors Championship</Link>
+        <div className="season-header">
+            <Link className="season-header-btn" to={`/seasons/${seasonYear}/races`}>Races</Link>
+            <Link className="season-header-btn" to={`/seasons/${seasonYear}/drivers`}>Drivers Championship</Link>
+            <Link className="season-header-btn" to={`/seasons/${seasonYear}/constructors`}>Constructors Championship</Link>
         </div>
   )
 }

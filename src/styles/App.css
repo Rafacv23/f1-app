@@ -1,4 +1,36 @@
 .App {
   text-align: center;
 }
+.season-header{
+  border-bottom: 2px solid #ffffff;
+  width: 100vw;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.season-header-btn{
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.season-header-btn:hover{
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 750px) {
+  .season-header{
+      margin-top: 8rem;
+      margin-bottom: 3rem;
+  }
+}
+
+.not-found-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}

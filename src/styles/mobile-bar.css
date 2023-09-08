@@ -1,0 +1,58 @@
+.nav{
+    display: none;
+}
+.nav-active{
+    display: none;
+}
+
+.display-btn{
+    background-image: url("https://cdn-icons-png.flaticon.com/128/2767/2767162.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: none;
+}
+
+@media screen and (max-width: 750px) {
+    .nav-active{
+        background-color: #e00601ff;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        gap: 2rem;
+        width: 70vw;
+    }
+    .nav{
+        background-color: #e00601ff;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 2rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .bar-btn{
+        display: none;
+    }
+    .bar-btn-active{
+        color: #ffffff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+    }
+    .bar-btn-hover:hover{
+        background-color: #1e1f26ff;
+    }
+}

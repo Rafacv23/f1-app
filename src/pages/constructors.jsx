@@ -12,7 +12,6 @@ const Constructors = () => {
       try {
         const data = await getConstructorStandings(seasonYear)
         const constructorStandings = data[0]?.ConstructorStandings || []
-        console.log(constructorStandings)
         setConstructors(constructorStandings)
       } catch (error) {
         console.error(error)
@@ -25,7 +24,7 @@ const Constructors = () => {
         <div>
             <SeasonHeader></SeasonHeader>
             <h2>Constructor Championship</h2>
-            <ul>
+            {constructors.length > 0 ? <ul>
               {constructors.map((constructor) => (
                 <li key={constructor.Constructor.constructorId}>
                   <p>{constructor.Constructor.name}</p>
@@ -35,7 +34,7 @@ const Constructors = () => {
                   <p>Wins: {constructor.wins}</p>
                 </li>
               ))}
-            </ul>
+            </ul> : <p>Loading data...</p> }
         </div>
   )
 }
