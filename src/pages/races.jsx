@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { getOneSeason } from "../data/seasons-data"
+import SeasonHeader from "../containers/season-header"
 
-const Season = () => {
+const Races = () => {
   const { seasonYear } = useParams()
   const [season, setSeason] = useState([])
 
@@ -21,6 +22,7 @@ const Season = () => {
 
   return (
     <div>
+    <SeasonHeader></SeasonHeader>
       {season ? (
   <div>
     <p>Season Name: {seasonYear}</p>
@@ -50,4 +52,4 @@ const Season = () => {
   )
 }
 
-export default Season
+export default Races

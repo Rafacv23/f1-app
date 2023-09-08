@@ -24,3 +24,26 @@ export const getOneSeason = async (year) => {
     throw error
   }
 }
+
+export const getDriverStandings = async (year) => {
+  try {
+    const response = await axios.get(`${apiUrl}/${year}/driverStandings.json`)
+    const standingsData = response.data.MRData.StandingsTable.StandingsLists
+    return standingsData
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
+export const getConstructorStandings = async (year) => {
+  try {
+    const response = await axios.get(`${apiUrl}/${year}/constructorStandings.json`)
+    const standingsData = response.data.MRData.StandingsTable.StandingsLists
+    console.log(standingsData)
+    return standingsData
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
