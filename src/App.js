@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import "./styles/App.css"
+import { Routes, Route } from "react-router-dom"
+import Seasons from "./pages/seasons.jsx"
+import Home from "./pages/home"
+import Header from "./containers/header"
+import NotFound from "./pages/not-found"
+import Season from "./pages/season"
 
-function App() {
+function App () {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/seasons" element={<Seasons/>}/>
+        <Route path="/seasons/:seasonYear" element={<Season />} />
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

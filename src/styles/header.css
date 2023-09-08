@@ -1,0 +1,19 @@
+.header{
+    background-color: #e00601ff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-btn{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.header-btn:hover{
+    background-color: #1e1f26ff;
+}
