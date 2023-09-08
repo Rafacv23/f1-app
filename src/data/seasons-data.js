@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const apiUrl = "http://ergast.com/api/f1"
+const apiUrl = "https://ergast.com/api/f1"
 const limit = 100
 
 export const getSeasons = async () => {
