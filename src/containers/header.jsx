@@ -6,7 +6,7 @@ import Text from "../components/text.jsx"
 const Header = ({ year }) => {
   return (
         <header className="header">
-            <Text text="This is a F1 App 🏁🏎️"></Text>
+            <Text text="F1 App 🏁🏎️"></Text>
             <Link className="header-btn" to={"/"}>Home</Link>
             <Link className="header-btn" to={"/current/races"}>{year} Season</Link>
             <Link className="header-btn" to={"/seasons"}>Previous Seasons</Link>
