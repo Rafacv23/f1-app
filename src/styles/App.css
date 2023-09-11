@@ -33,11 +33,14 @@ table{
   margin-bottom: 2rem;
   border-collapse: collapse;
   width: 50%;
+  border: 1px solid #ffffff;
 }
 
 th{
-  font-family: "f1-bold";
+  font-family: "f1-black";
   text-align: left;
+  background-color: #ffffff;
+  color: #14151fff;
 }
 
 td, th {
@@ -46,18 +49,11 @@ td, th {
   padding: 0.5rem;
 }
 
-@media screen and (max-width: 800px){
-  td, th {
-    text-align: left;
-    padding: 0.3rem;
-  }
-  th {
-    font-size: 14px;
-  }
-
-  td {
-    font-size: 12px;
-  }
+td{
+  border-left: 0;
+  border-right: 0;
+  text-align: justify;
+  padding-inline: 0.5rem;
 }
 
 @media screen and (max-width: 750px) {
@@ -73,25 +69,36 @@ td, th {
   }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 650px){
   th {
-    font-size: 10px;
+    font-size: 14px;
   }
 
   td {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 
-@media screen and (max-width: 475px){
-  .season-header{
-    font-size: 12px;
-  }
+@media screen and (max-width: 570px){
   th {
-    font-size: 7px;
+    font-size: 12px;
   }
 
   td {
-    font-size: 8px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .season-header{
+    font-size: 12px;
+    width: 100%;
+  }
+  th {
+    font-size: 10px;
+  }
+
+  td {
+    font-size: 10px;
   }
 }
