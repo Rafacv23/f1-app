@@ -84,7 +84,7 @@
     text-decoration: underline;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1450px) {
     .race-item{
         display: flex;
         flex-direction: column;
