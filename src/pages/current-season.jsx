@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import CurrentSeasonHeader from "../containers/current-season-header"
 import "../styles/current-season.css"
 import { getCurrentSeason } from "../data/seasons-data.js"
+import { Link } from "react-router-dom"
 
 const CurrentSeason = ({ year }) => {
   const [season, setSeason] = useState({ season: "", Races: [] })
@@ -37,6 +38,8 @@ const CurrentSeason = ({ year }) => {
                   <p>Round: {race.round}</p>
                   <p>Date: {race.date}</p>
                   <p>URL: <a href={race.url} target="_blank" rel="noopener noreferrer"> Wiki</a></p>
+                  <Link to={`/seasons/${season.season}/races/${race.round}/qualy`}>Qualy</Link>
+                  <Link to={`/seasons/${season.season}/races/${race.round}/results`}>Results</Link>
               </li>
             ))}
           </ul>

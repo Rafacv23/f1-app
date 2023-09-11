@@ -3,7 +3,7 @@
 }
 .season-header{
   border-bottom: 2px solid #ffffff;
-  width: 100vw;
+  width: auto;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -33,4 +33,20 @@
   justify-content: center;
   align-items: center;
   height: 60vh;
+}
+
+table{
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+th{
+  font-family: "f1-bold";
+}
+
+td, th {
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #ffffff;
+  padding: 0.5rem;
 }

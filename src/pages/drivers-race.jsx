@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react"
-import SeasonHeader from "../containers/season-header"
-import { getDriverStandings } from "../data/seasons-data"
+import { getDriverStandingsPerRace } from "../data/seasons-data"
 import { useParams } from "react-router-dom"
+import RaceResultsHeader from "../containers/race-results-header"
 
 const Drivers = () => {
   const { seasonYear } = useParams()
+  const { raceId } = useParams()
   const [drivers, setDrivers] = useState([])
 
   useEffect(() => {
     async function fetchDriverStandings () {
       try {
-        const data = await getDriverStandings(seasonYear)
+        const data = await getDriverStandingsPerRace(seasonYear, raceId)
         const driverStandings = data[0]?.DriverStandings || []
         setDrivers(driverStandings)
       } catch (error) {
@@ -22,7 +23,7 @@ const Drivers = () => {
 
   return (
     <div>
-      <SeasonHeader />
+      <RaceResultsHeader></RaceResultsHeader>
       <h2>Drivers Championship</h2>
       {drivers.length > 0
         ? <table>

@@ -47,6 +47,17 @@ export const getDriverStandings = async (year) => {
   }
 }
 
+export const getDriverStandingsPerRace = async (year, raceId) => {
+  try {
+    const response = await axios.get(`${apiUrl}/${year}/${raceId}/driverStandings.json`)
+    const standingsData = response.data.MRData.StandingsTable.StandingsLists
+    return standingsData
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
 export const getConstructorStandings = async (year) => {
   try {
     const response = await axios.get(`${apiUrl}/${year}/constructorStandings.json`)
@@ -54,6 +65,42 @@ export const getConstructorStandings = async (year) => {
     return standingsData
   } catch (error) {
     console.error(error)
+    throw error
+  }
+}
+
+export const getConstructorStandingsPerRace = async (year, raceId) => {
+  try {
+    const response = await axios.get(`${apiUrl}/${year}/${raceId}/constructorStandings.json`)
+    const standingsData = response.data.MRData.StandingsTable.StandingsLists
+    console.log(standingsData)
+    return standingsData
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
+export const getQualyResult = async (year, raceId) => {
+  try {
+    const response = await axios.get(`${apiUrl}/${year}/${raceId}/qualifying.json`)
+    const qualyData = response.data.MRData.RaceTable.Races
+    console.log(qualyData)
+    return qualyData
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+}
+
+export const getRaceResult = async (year, raceId) => {
+  try {
+    const response = await axios.get(`${apiUrl}/${year}/${raceId}/results.json`)
+    const raceData = response.data.MRData.RaceTable.Races
+    console.log(raceData)
+    return raceData
+  } catch (error) {
+    console.log(error)
     throw error
   }
 }

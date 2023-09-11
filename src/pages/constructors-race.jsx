@@ -1,29 +1,30 @@
-import React, { useEffect, useState } from "react"
-import SeasonHeader from "../containers/season-header"
+import React, { useState, useEffect } from "react"
+import { getConstructorStandingsPerRace } from "../data/seasons-data"
 import { useParams } from "react-router-dom"
-import { getConstructorStandings } from "../data/seasons-data"
+import RaceResultsHeader from "../containers/race-results-header"
 
-const Constructors = () => {
+const Drivers = () => {
   const { seasonYear } = useParams()
+  const { raceId } = useParams()
   const [constructors, setConstructors] = useState([])
 
   useEffect(() => {
-    async function fetchDriverStandings () {
+    async function fetchConstructorStandings () {
       try {
-        const data = await getConstructorStandings(seasonYear)
+        const data = await getConstructorStandingsPerRace(seasonYear, raceId)
         const constructorStandings = data[0]?.ConstructorStandings || []
         setConstructors(constructorStandings)
       } catch (error) {
         console.error(error)
       }
     }
-    fetchDriverStandings()
-  }, [seasonYear])
+    fetchConstructorStandings()
+  }, [seasonYear, raceId])
 
   return (
-        <div>
-            <SeasonHeader></SeasonHeader>
-            <h2>Constructors Championship</h2>
+    <div>
+      <RaceResultsHeader></RaceResultsHeader>
+      <h2>Constructors Championship</h2>
             {constructors.length > 0
               ? <table>
               <thead>
@@ -48,8 +49,8 @@ const Constructors = () => {
               </tbody>
             </table>
               : <p>Loading data...</p>}
-        </div>
+              </div>
   )
 }
 
-export default Constructors
+export default Drivers
