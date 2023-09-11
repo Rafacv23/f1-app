@@ -29,14 +29,14 @@
         top: 0;
         bottom: 0;
         gap: 2rem;
-        width: 70vw;
+        width: 70%;
     }
     .nav{
         background-color: #e00601ff;
         padding: 1.5rem;
         display: flex;
         flex-direction: row;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         gap: 2rem;
         position: fixed;

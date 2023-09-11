@@ -20,13 +20,6 @@
   text-decoration: underline;
 }
 
-@media screen and (max-width: 750px) {
-  .season-header{
-      margin-top: 8rem;
-      margin-bottom: 3rem;
-  }
-}
-
 .not-found-page{
   display: flex;
   flex-direction: column;
@@ -38,15 +31,67 @@
 table{
   margin: 0 auto;
   margin-bottom: 2rem;
+  border-collapse: collapse;
+  width: 50%;
 }
 
 th{
   font-family: "f1-bold";
+  text-align: left;
 }
 
 td, th {
   vertical-align: middle;
-  text-align: center;
   border: 1px solid #ffffff;
   padding: 0.5rem;
+}
+
+@media screen and (max-width: 800px){
+  td, th {
+    text-align: left;
+    padding: 0.3rem;
+  }
+  th {
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .season-header{
+      margin-top: 8rem;
+      margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .season-header{
+      font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  th {
+    font-size: 10px;
+  }
+
+  td {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 475px){
+  .season-header{
+    font-size: 12px;
+  }
+  th {
+    font-size: 7px;
+  }
+
+  td {
+    font-size: 8px;
+  }
 }
