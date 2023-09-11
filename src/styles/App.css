@@ -62,7 +62,7 @@ td, th {
 
 @media screen and (max-width: 750px) {
   .season-header{
-      margin-top: 8rem;
+      margin-top: 6rem;
       margin-bottom: 3rem;
   }
 }

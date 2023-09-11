@@ -3,7 +3,7 @@ import SeasonHeader from "../containers/season-header"
 import { getDriverStandings } from "../data/seasons-data"
 import { useParams } from "react-router-dom"
 
-const Drivers = () => {
+const Drivers = ({ year }) => {
   const { seasonYear } = useParams()
   const [drivers, setDrivers] = useState([])
 
@@ -23,7 +23,7 @@ const Drivers = () => {
   return (
     <div>
       <SeasonHeader />
-      <h2>Drivers Championship</h2>
+      <h2> {seasonYear === "current" ? year : seasonYear} Drivers Championship</h2>
       {drivers.length > 0
         ? <table>
         <thead>

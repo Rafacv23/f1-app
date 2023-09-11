@@ -4,6 +4,89 @@
     justify-content: center;
     align-items: center;
     gap: 0.2rem;
-    margin: 1rem;
+    margin: auto;
     padding: 1rem;
+}
+
+.race-item{
+    padding: 1rem;
+    border: 2px solid #ffff;
+    border-radius: 0.5rem;
+    border-left: none;
+    border-bottom: none;
+    margin: 1rem;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.race-item:hover{
+    border: 2px solid #e00700ff;
+    border-left: none;
+    border-bottom: none;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.circuit{
+    font-family: "f1-bold";
+}
+
+.round{
+    color: #e00700ff;
+    font-family: "f1-black";
+}
+
+.date{
+    font-family: "f1-wide";
+    background-color: #fefffeff;
+    color: #15141fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.qualy-btn{
+    background-color: #e00700ff;
+    color: #ffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ffffff;
+    border-top: 0;
+    border-left: 0;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+    font-family: "f1-bold";
+}
+
+.qualy-btn:hover{
+    background-color: #ffff;
+    border: 1px solid #e00700ff;
+    color: #e00700ff;
+    border-top: 0;
+    border-left: 0;
+    transition: 0.5s;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.url{
+    color: #fefffeff;
+    text-decoration: none;
+}
+
+.url:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    .race-item{
+        display: flex;
+        flex-direction: column;
+    }
 }

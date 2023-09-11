@@ -3,7 +3,7 @@ import { getConstructorStandingsPerRace } from "../data/seasons-data"
 import { useParams } from "react-router-dom"
 import RaceResultsHeader from "../containers/race-results-header"
 
-const Drivers = () => {
+const Drivers = ({ year }) => {
   const { seasonYear } = useParams()
   const { raceId } = useParams()
   const [constructors, setConstructors] = useState([])
@@ -24,7 +24,7 @@ const Drivers = () => {
   return (
     <div>
       <RaceResultsHeader></RaceResultsHeader>
-      <h2>Constructors Championship</h2>
+      <h2>{seasonYear === "current" ? year : seasonYear} Constructors Championship</h2>
             {constructors.length > 0
               ? <table>
               <thead>

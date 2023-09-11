@@ -3,7 +3,7 @@ import SeasonHeader from "../containers/season-header"
 import { useParams } from "react-router-dom"
 import { getConstructorStandings } from "../data/seasons-data"
 
-const Constructors = () => {
+const Constructors = ({ year }) => {
   const { seasonYear } = useParams()
   const [constructors, setConstructors] = useState([])
 
@@ -23,7 +23,7 @@ const Constructors = () => {
   return (
         <div>
             <SeasonHeader></SeasonHeader>
-            <h2>Constructors Championship</h2>
+            <h2>{seasonYear === "current" ? year : seasonYear} Constructors Championship</h2>
             {constructors.length > 0
               ? <table>
               <thead>
