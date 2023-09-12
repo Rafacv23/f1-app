@@ -1,4 +1,4 @@
-# # Formula 1 Info App
+# Formula 1 Info App
 
 ![App Demo](demo.gif)
 
@@ -11,7 +11,6 @@ A comprehensive web application built with React and CSS that provides detailed 
 - [Usage](#usage)
 - [Features](#features)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Demo
 
