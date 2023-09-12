@@ -26,7 +26,7 @@ const Seasons = () => {
 
   return (
     <div>
-      <h1 className="season-title">Temporadas de Fórmula 1</h1>
+      <h1 className="season-title">Formula 1 Seasons</h1>
       <ul className="season-list">
         {seasons.map((season) => (
           <li className="list" key={season.season}>

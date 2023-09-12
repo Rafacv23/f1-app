@@ -33,7 +33,7 @@ function App () {
       <Header year={year}></Header>
       <MobileBar year={year}></MobileBar>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home year={year}/>}/>
         <Route path="/seasons" element={<Seasons/>}/>
         <Route path="/current/races" element={<CurrentSeason year={year}/>}/>
         <Route path="/seasons/:seasonYear/races" element={<Races year={year} />} />

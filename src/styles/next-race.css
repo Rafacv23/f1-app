@@ -1,0 +1,50 @@
+.next-race-container{
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    margin: 1rem;
+    gap: 5rem;
+}
+
+.sessions-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.time{
+    background-color: #39383eff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.date-info{
+    font-family: "f1-wide";
+    background-color: #fefffeff;
+    color: #15141fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.sessions-data{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1300px) {
+    .next-race-container{
+        flex-direction: column;
+    }
+}

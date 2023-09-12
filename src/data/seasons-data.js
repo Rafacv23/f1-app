@@ -104,3 +104,14 @@ export const getRaceResult = async (year, raceId) => {
     throw error
   }
 }
+
+export const getNextRace = async () => {
+  try {
+    const response = await axios.get(`${apiUrl}/current/next.json`)
+    const raceData = response.data.MRData.RaceTable.Races[0]
+    return raceData
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}

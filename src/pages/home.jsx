@@ -1,10 +1,16 @@
 import React from "react"
 import "../styles/home.css"
+import NextRace from "../containers/next-race"
+import Championship from "../containers/championship"
 
-const Home = () => {
+const Home = ({ year }) => {
   return (
         <div className="home">
-            Esto es el home
+            <h1>{year} F1 Season</h1>
+            <div className="data">
+              <NextRace></NextRace>
+              <Championship year={year}></Championship>
+            </div>
         </div>
   )
 }

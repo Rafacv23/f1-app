@@ -2,6 +2,24 @@
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1300px) {
+    .data{
+        flex-direction: column;
+    }
+    .home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 750px) {
