@@ -17,10 +17,11 @@ import Result from "./pages/result"
 import ScrollToTop from "./components/scroll-to-top"
 
 function App () {
-  const [year, setYear] = useState()
+  const [year, setYear] = useState(null)
   const getSeason = () => {
     const date = new Date()
     const year = date.getFullYear()
+    console.log(year)
     return year
   }
 
