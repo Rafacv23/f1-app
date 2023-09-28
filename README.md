@@ -1,6 +1,6 @@
 # Formula 1 Info App
 
-![App Demo](demo.gif)
+![App Demo](./src/media/Grabación-2023-09-28-172745.gif)
 
 A comprehensive web application built with React and CSS that provides detailed information about Formula 1 races, drivers, teams, and season statistics. Stay up-to-date with upcoming races and explore the rich history of Formula 1.
 
