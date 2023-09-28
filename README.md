@@ -16,8 +16,6 @@ A comprehensive web application built with React and CSS that provides detailed 
 
 Check out the live demo [here](https://f1-app-three.vercel.app/).
 
-![App Screenshot](screenshot.png)
-
 ## Installation
 
 To run this project on your local machine, follow these steps:
