@@ -29,15 +29,40 @@ function App () {
     setYear(getSeason())
   }, [])
 
+  const getMonthAbbreviation = (monthNumber) => {
+    const months = [
+      "JAN",
+      "FEB",
+      "MAR",
+      "APR",
+      "MAY",
+      "JUN",
+      "JUL",
+      "AUG",
+      "SEP",
+      "OCT",
+      "NOV",
+      "DEC"
+    ]
+    return months[monthNumber - 1]
+  }
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString)
+    const day = date.getDate()
+    const monthAbbreviation = getMonthAbbreviation(date.getMonth() + 1)
+    return `${day} - ${monthAbbreviation}`
+  }
+
   return (
     <div className="App">
       <Header year={year}></Header>
       <MobileBar year={year}></MobileBar>
       <Routes>
-        <Route path="/" element={<Home year={year}/>}/>
+        <Route path="/" element={<Home formatDate={formatDate} year={year}/>}/>
         <Route path="/seasons" element={<Seasons/>}/>
-        <Route path="/current/races" element={<CurrentSeason year={year}/>}/>
-        <Route path="/seasons/:seasonYear/races" element={<Races year={year} />} />
+        <Route path="/current/races" element={<CurrentSeason formatDate={formatDate} year={year}/>}/>
+        <Route path="/seasons/:seasonYear/races" element={<Races formatDate={formatDate} year={year} />} />
         <Route path="/seasons/:seasonYear/races/:raceId/qualy" element={<Qualy />} />
         <Route path="/seasons/:seasonYear/races/:raceId/results" element={<Result />} />
         <Route path="/seasons/:seasonYear/races/:raceId/drivers" element={<DriversRace year={year} />} />

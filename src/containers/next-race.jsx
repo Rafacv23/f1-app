@@ -3,7 +3,7 @@ import { getNextRace } from "../data/seasons-data"
 import "../styles/next-race.css"
 import "../styles/races.css"
 
-const NextRace = () => {
+const NextRace = ({ formatDate }) => {
   const [nextRace, setNextRace] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -51,31 +51,6 @@ const NextRace = () => {
       hour: "2-digit",
       minute: "2-digit"
     })
-  }
-
-  const getMonthAbbreviation = (monthNumber) => {
-    const months = [
-      "JAN",
-      "FEB",
-      "MAR",
-      "APR",
-      "MAY",
-      "JUN",
-      "JUL",
-      "AUG",
-      "SEP",
-      "OCT",
-      "NOV",
-      "DEC"
-    ]
-    return months[monthNumber - 1]
-  }
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString)
-    const day = date.getDate()
-    const monthAbbreviation = getMonthAbbreviation(date.getMonth() + 1)
-    return `${day} - ${monthAbbreviation}`
   }
 
   return (

@@ -5,7 +5,7 @@ import "../styles/races.css"
 import { getCurrentSeason } from "../data/seasons-data.js"
 import { Link } from "react-router-dom"
 
-const CurrentSeason = ({ year }) => {
+const CurrentSeason = ({ year, formatDate }) => {
   const [season, setSeason] = useState({ season: "", Races: [] })
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const CurrentSeason = ({ year }) => {
               <li key={race.round} className="race-item">
                 <p className="circuit">{race.raceName} - {race.Circuit.circuitName}</p>
                   <p className="round">Round {race.round}</p>
-                  <p className="date">{race.date}</p>
+                  <p className="date">{formatDate(race.date)}</p>
                   <div className="buttons">
                     <Link className="qualy-btn" to={`/seasons/${season.season}/races/${race.round}/qualy`}>Qualy</Link>
                     <Link className="qualy-btn" to={`/seasons/${season.season}/races/${race.round}/results`}>Race</Link>

@@ -30,6 +30,7 @@
         bottom: 0;
         gap: 2rem;
         width: 70%;
+        z-index: 999;
     }
     .nav{
         background-color: #e00601ff;
@@ -43,6 +44,7 @@
         top: 0;
         left: 0;
         right: 0;
+        z-index: 999;
     }
     .bar-btn{
         display: none;

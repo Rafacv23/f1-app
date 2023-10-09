@@ -6,7 +6,7 @@ import "../styles/races.css"
 import Result from "./result"
 import Qualy from "./qualy"
 
-const Races = ({ year }) => {
+const Races = ({ year, formatDate }) => {
   const { seasonYear } = useParams()
   const [season, setSeason] = useState([])
 
@@ -35,7 +35,7 @@ const Races = ({ year }) => {
           <li key={race.date} className="race-item">
             <p className="circuit">{race.raceName} - {race.Circuit.circuitName}</p>
             <p className="round">Round {race.round}</p>
-            <p className="date">{race.date}</p>
+            <p className="date">{formatDate(race.date)}</p>
             <div className="buttons">
             <Link to={`./${race.round}/qualy`} className="qualy-btn">Qualy</Link>
             <Link to={`./${race.round}/results`} className="qualy-btn">Race</Link>
