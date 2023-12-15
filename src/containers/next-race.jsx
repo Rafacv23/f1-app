@@ -9,7 +9,7 @@ const NextRace = ({ formatDate }) => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    async function fetchSeason () {
+    async function fetchSeason() {
       try {
         const data = await getNextRace()
         setNextRace(data)
@@ -29,7 +29,7 @@ const NextRace = ({ formatDate }) => {
       const date = new Date(nextRace.date + " " + nextRace.time)
       const localHour = date.toLocaleTimeString("en-US", {
         hour: "2-digit",
-        minute: "2-digit"
+        minute: "2-digit",
       })
       if (localHour !== nextRace.localTime) {
         setNextRace((prevRace) => ({ ...prevRace, localTime: localHour }))
@@ -49,7 +49,7 @@ const NextRace = ({ formatDate }) => {
     const date = new Date(nextRace.date + " " + time)
     return date.toLocaleTimeString("en-US", {
       hour: "2-digit",
-      minute: "2-digit"
+      minute: "2-digit",
     })
   }
 
